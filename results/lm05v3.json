@@ -1,0 +1,127 @@
+{
+ "model": "mega",
+ "repo": "LM_2022_Mega-pytorch",
+ "target_repo": "LM_Dec_AttnFree_Mega",
+ "category": "AttnFree",
+ "upstream": "lucidrains/Mega-pytorch (MIT)",
+ "unified": [
+  "depth 6 (upstream 8)",
+  "fp32 (its FFT does not support bf16) and micro-batch 4 with gradient accumulation (same update): about 0.75 GB per 512-token sample in fp32; the first LM-05 run spilled past 8 GB and stalled"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05v3",
+ "started": "2026-10-27 18:49:52",
+ "smoke": false,
+ "levels": {
+  "4": {
+   "queries": 1,
+   "distinct": true,
+   "steps": 2802,
+   "capped": true,
+   "diverged": false,
+   "bf16": false,
+   "final_loss": 4.158731460571289,
+   "minutes": 62.3,
+   "history": [
+    {
+     "step": 500,
+     "loss": 4.150412559509277,
+     "acc": 0.015625
+    },
+    {
+     "step": 1000,
+     "loss": 4.175576686859131,
+     "acc": 0.0
+    },
+    {
+     "step": 1500,
+     "loss": 4.217166900634766,
+     "acc": 0.046875
+    },
+    {
+     "step": 2000,
+     "loss": 4.200008392333984,
+     "acc": 0.0
+    },
+    {
+     "step": 2500,
+     "loss": 4.255802154541016,
+     "acc": 0.015625
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 0.01171875,
+     "keys": 0.0078125,
+     "values": 0.0078125,
+     "true_recall": 0.00390625
+    },
+    "2048": {
+     "normal": 0.021484375,
+     "keys": 0.015625,
+     "values": 0.015625,
+     "true_recall": 0.005859375
+    }
+   },
+   "value_set_baseline": 0.25,
+   "chance": 0.015625,
+   "micro_batch": 4
+  },
+  "16": {
+   "queries": 4,
+   "distinct": true,
+   "steps": 2809,
+   "capped": true,
+   "diverged": false,
+   "bf16": false,
+   "final_loss": 4.183071136474609,
+   "minutes": 62.4,
+   "history": [
+    {
+     "step": 500,
+     "loss": 4.174060344696045,
+     "acc": 0.015625
+    },
+    {
+     "step": 1000,
+     "loss": 4.186604022979736,
+     "acc": 0.015625
+    },
+    {
+     "step": 1500,
+     "loss": 4.2006707191467285,
+     "acc": 0.01953125
+    },
+    {
+     "step": 2000,
+     "loss": 4.181585788726807,
+     "acc": 0.00390625
+    },
+    {
+     "step": 2500,
+     "loss": 4.182231903076172,
+     "acc": 0.01953125
+    }
+   ],
+   "test": {
+    "512": {
+     "normal": 0.017578125,
+     "keys": 0.0244140625,
+     "values": 0.0244140625,
+     "true_recall": -0.0068359375
+    },
+    "2048": {
+     "normal": 0.01708984375,
+     "keys": 0.015625,
+     "values": 0.015625,
+     "true_recall": 0.00146484375
+    }
+   },
+   "value_set_baseline": 0.0625,
+   "chance": 0.015625,
+   "micro_batch": 4
+  }
+ },
+ "seconds": 7485.0
+}

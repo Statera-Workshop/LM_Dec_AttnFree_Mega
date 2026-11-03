@@ -1,0 +1,99 @@
+{
+ "model": "mega",
+ "repo": "LM_2022_Mega-pytorch",
+ "target_repo": "LM_Dec_AttnFree_Mega",
+ "category": "AttnFree",
+ "upstream": "lucidrains/Mega-pytorch (MIT)",
+ "unified": [
+  "depth 6 (upstream 8)",
+  "fp32 (its FFT does not support bf16) and micro-batch 4 with gradient accumulation (same update): about 0.75 GB per 512-token sample in fp32; the first LM-05 run spilled past 8 GB and stalled"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "lm05",
+ "started": "2026-10-20 10:35:15",
+ "smoke": false,
+ "params": 12386816,
+ "micro_batch": 4,
+ "steps": 5553,
+ "budget_steps": 6000,
+ "capped": true,
+ "batch": 32,
+ "train_len": 512,
+ "pairs": 16,
+ "bf16": false,
+ "minutes": 126.4,
+ "history": [
+  {
+   "step": 500,
+   "loss": 4.171440124511719,
+   "acc_train_len": 0.0185546875
+  },
+  {
+   "step": 1000,
+   "loss": 4.163434028625488,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 1500,
+   "loss": 4.166048049926758,
+   "acc_train_len": 0.013671875
+  },
+  {
+   "step": 2000,
+   "loss": 4.159367561340332,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 2500,
+   "loss": 4.160954475402832,
+   "acc_train_len": 0.01611328125
+  },
+  {
+   "step": 3000,
+   "loss": 4.167036533355713,
+   "acc_train_len": 0.017578125
+  },
+  {
+   "step": 3500,
+   "loss": 4.158729553222656,
+   "acc_train_len": 0.01220703125
+  },
+  {
+   "step": 4000,
+   "loss": 4.164826393127441,
+   "acc_train_len": 0.01953125
+  },
+  {
+   "step": 4500,
+   "loss": 4.169582366943359,
+   "acc_train_len": 0.01513671875
+  },
+  {
+   "step": 5000,
+   "loss": 4.165533065795898,
+   "acc_train_len": 0.01708984375
+  },
+  {
+   "step": 5500,
+   "loss": 4.1643452644348145,
+   "acc_train_len": 0.01611328125
+  }
+ ],
+ "test": {
+  "512": {
+   "acc": 0.015380859375,
+   "answers": 8192
+  },
+  "1024": {
+   "acc": 0.011962890625,
+   "answers": 8192
+  },
+  "2048": {
+   "acc": 0.0167236328125,
+   "answers": 8192
+  }
+ },
+ "chance": 0.015625,
+ "seconds": 7585.6
+}

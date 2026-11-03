@@ -1,0 +1,29 @@
+{
+ "model": "mega",
+ "repo": "LM_2022_Mega-pytorch",
+ "target_repo": "LM_Dec_AttnFree_Mega",
+ "category": "AttnFree",
+ "upstream": "lucidrains/Mega-pytorch (MIT)",
+ "unified": [
+  "depth 6 (upstream 8)",
+  "fp32 (its FFT does not support bf16) and micro-batch 4 with gradient accumulation (same update): about 0.75 GB per 512-token sample in fp32; the first LM-05 run spilled past 8 GB and stalled"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "verify5",
+ "started": "2026-10-20 12:41:43",
+ "smoke": false,
+ "rows": {
+  "512": {
+   "normal": 0.015380859375,
+   "values": 0.01611328125,
+   "keys": 0.01611328125
+  },
+  "2048": {
+   "normal": 0.01708984375,
+   "values": 0.0146484375,
+   "keys": 0.0146484375
+  }
+ },
+ "seconds": 72.9
+}

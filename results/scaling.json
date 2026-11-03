@@ -1,0 +1,83 @@
+{
+ "model": "mega",
+ "repo": "LM_2022_Mega-pytorch",
+ "target_repo": "LM_Dec_AttnFree_Mega",
+ "category": "AttnFree",
+ "upstream": "lucidrains/Mega-pytorch (MIT)",
+ "unified": [
+  "depth 6 (upstream 8)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "scaling",
+ "started": "2026-10-19 17:52:05",
+ "smoke": false,
+ "rows": [
+  {
+   "len": 512,
+   "train": {
+    "peak_mb": 726.1,
+    "ms": 42.8,
+    "dtype": "fp32"
+   },
+   "infer": {
+    "peak_mb": 177.3,
+    "ms": 14.0,
+    "dtype": "fp32"
+   }
+  },
+  {
+   "len": 1024,
+   "train": {
+    "peak_mb": 1451.6,
+    "ms": 99.0,
+    "dtype": "fp32"
+   },
+   "infer": {
+    "peak_mb": 354.4,
+    "ms": 32.9,
+    "dtype": "fp32"
+   }
+  },
+  {
+   "len": 2048,
+   "train": {
+    "peak_mb": 3032.7,
+    "ms": 256.3,
+    "dtype": "fp32"
+   },
+   "infer": {
+    "peak_mb": 708.6,
+    "ms": 75.5,
+    "dtype": "fp32"
+   }
+  },
+  {
+   "len": 4096,
+   "train": {
+    "peak_mb": 6584.9,
+    "ms": 1123.8,
+    "dtype": "fp32"
+   },
+   "infer": {
+    "peak_mb": 1417.0,
+    "ms": 208.7,
+    "dtype": "fp32"
+   }
+  },
+  {
+   "len": 8192,
+   "train": {
+    "peak_mb": 16887.8,
+    "ms": 45058.6,
+    "dtype": "fp32"
+   },
+   "infer": {
+    "peak_mb": 2926.1,
+    "ms": 532.7,
+    "dtype": "fp32"
+   }
+  }
+ ],
+ "seconds": 159.9
+}
